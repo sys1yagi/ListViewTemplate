@@ -17,15 +17,18 @@ public class ${activityClass} extends Activity {
 
         ListView listView = (ListView) findViewById(R.id.listview);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
-        for(int i = 0; i < 30; i++){
-            adapter.add("item"+i);
-        }        
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_list_item_1, android.R.id.text1);
+        for (int i = 0; i < 30; i++) {
+            adapter.add("item" + i);
+        }
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int pos, long id) {
-                Toast.makeText(getApplicationContext(), "click:" + pos, Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                        getApplicationContext(), "click:" + pos,
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
